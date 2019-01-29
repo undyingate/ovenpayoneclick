@@ -3,15 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.transbankdevelopers</groupId>
-    <artifactId>transbank-sdk-java-webpay-example</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>webpay-example</name>
-    <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
+  <groupId>OvenpayOneclick</groupId>
+  <artifactId>OvenpayOneclick</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>   
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -23,59 +18,33 @@
             <groupId>com.github.transbankdevelopers</groupId>
             <artifactId>transbank-sdk-java</artifactId>
             <version>1.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>4.14.0</version>
-            <scope>test</scope>
-        </dependency>
+        </dependency>           
     </dependencies>
-
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.11.v20180605</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.2</version>
-                <configuration>
-                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
-                <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>selenide.browser</name>
-                            <value>Chrome</value>
-                        </property>
-                        <property>
-                            <name>selenide.headless</name>
-                            <value>true</value>
-                        </property>
-                        <property>
-                            <name>selenide.reports</name>
-                            <value>selenide-reports</value>
-                        </property>
-
-                    </systemProperties>
-                </configuration>
-            </plugin>
-        </plugins>
+       <sourceDirectory>src</sourceDirectory>
+		<finalName>OvenpayOneclick</finalName>
+ 
+		<plugins>
+ 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>					
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+				</configuration>
+			</plugin>
+ 
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+ 
+		</plugins>
     </build>
 
 </project>
